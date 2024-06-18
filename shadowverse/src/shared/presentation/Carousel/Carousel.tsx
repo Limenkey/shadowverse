@@ -1,7 +1,17 @@
 // src/components/Carousel.js
 import { useEffect, useRef, useState } from 'react';
-import { Box, Flex, IconButton, useBreakpointValue } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import {
+  Box,
+  Button,
+  Flex,
+  IconButton,
+  useBreakpointValue,
+} from '@chakra-ui/react';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  TriangleUpIcon,
+} from '@chakra-ui/icons';
 
 interface CarouselProps<T extends { id: number | string }> {
   items: T[];
@@ -46,20 +56,18 @@ const Carousel = <T extends { id: number | string }>(
       position='relative'
       width='full'
       overflow='hidden'
-      height='100%'
       ref={carouselRef}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      borderRadius='16px'
     >
       <Box
         display='flex'
         transition='transform 0.5s'
-        transform={`translateX(-${currentIndex * 33.33}%)`}
+        transform={`translateX(-${currentIndex * (100 / items.length)}%)`}
         width={`${items.length * 100}%`}
         height='100%'
       >
         {items.map((item, idx, arr) => (
-          <Box key={item.id} height='100%' width='100%'>
+          <Box key={item.id} minHeight='100%' width='100%'>
             {renderItem(item, idx, arr)}
           </Box>
         ))}
@@ -67,7 +75,7 @@ const Carousel = <T extends { id: number | string }>(
       <IconButton
         icon={<ChevronLeftIcon />}
         position='absolute'
-        left='0'
+        left='4px'
         top='50%'
         transform='translateY(-50%)'
         onClick={previousSlide}
@@ -79,7 +87,7 @@ const Carousel = <T extends { id: number | string }>(
       <IconButton
         icon={<ChevronRightIcon />}
         position='absolute'
-        right='0'
+        right='4px'
         top='50%'
         transform='translateY(-50%)'
         onClick={nextSlide}
@@ -89,18 +97,71 @@ const Carousel = <T extends { id: number | string }>(
         aria-label='next-slide'
       />
       <Flex justify='center' position='absolute' bottom='10px' width='100%'>
-        {items.map((_, index) => (
-          <Box
-            key={_.id}
-            width='10px'
-            height='10px'
-            borderRadius='50%'
-            bg={currentIndex === index ? 'blue.500' : 'gray.300'}
-            mx='5px'
-            cursor='pointer'
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
+        <Button
+          onClick={() => {
+            setIsPaused(!isPaused);
+          }}
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          gap='2px'
+          minW='12px'
+          width='12px'
+          height='10px'
+          bg='transparent'
+          p='0'
+          role='group'
+          _hover={{
+            bg: 'transparent',
+          }}
+        >
+          {isPaused ? (
+            <TriangleUpIcon
+              height='12px'
+              width='12px'
+              transform='rotate(90deg)'
+              color='gray.100'
+              _groupHover={{
+                color: 'blue.500',
+              }}
+            />
+          ) : (
+            <>
+              <Box
+                height='100%'
+                width='4px'
+                bg='gray.100'
+                borderRadius='4px'
+                _groupHover={{
+                  bg: 'blue.500',
+                }}
+              />
+              <Box
+                height='100%'
+                width='4px'
+                bg='gray.100'
+                borderRadius='4px'
+                _groupHover={{
+                  bg: 'blue.500',
+                }}
+              />
+            </>
+          )}
+        </Button>
+        <Flex>
+          {items.map((_, index) => (
+            <Box
+              key={_.id}
+              width='10px'
+              height='10px'
+              borderRadius='50%'
+              bg={currentIndex === index ? 'blue.500' : 'gray.300'}
+              mx='5px'
+              cursor='pointer'
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </Flex>
       </Flex>
     </Box>
   );

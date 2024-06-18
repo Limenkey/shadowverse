@@ -66,6 +66,7 @@ module.exports = {
       "extensions": [".js", ".jsx", ".tsx"]
     }],
     "react/display-name": "error",
+    "react/no-unescaped-entities": "off",
 
     // React hooks
     "react-hooks/exhaustive-deps": "warn",
