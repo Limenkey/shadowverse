@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Box, Center, Circle, Heading, Stack } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import paths from './paths.tsx';
+import { Navigation } from '../../components/Navigation/Navigation.tsx';
 
 const Router = () => {
   return (
@@ -13,15 +14,11 @@ const Router = () => {
       }
     >
       <Stack height='100vh' direction='column' gap='24px' bg='#24252b'>
-        <Circle
-          size='48px'
-          bg='lightslategrey'
-          position='absolute'
-          top='16px'
-          left='16px'
-        />
-        <Center width='100%' height='48px'>
-          <Heading fontStyle='italic' color='white'>IMC</Heading>
+        <Navigation />
+        <Center width='100%' height='64px'>
+          <Heading fontStyle='italic' color='white'>
+            IMC
+          </Heading>
         </Center>
         {/* TODO: Create NavBar/Menu */}
         <Routes>

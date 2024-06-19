@@ -63,7 +63,7 @@ export const ContentCarousel = () => {
       renderItem={(item) => (
         <Flex
           alignItems='center'
-          height='60vh'
+          height='452px'
           background='#52535c'
           shadow='md'
         >

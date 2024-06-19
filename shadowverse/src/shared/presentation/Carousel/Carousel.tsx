@@ -109,6 +109,7 @@ const Carousel = <T extends { id: number | string }>(
           width='12px'
           height='10px'
           bg='transparent'
+          mr='5px'
           p='0'
           role='group'
           _hover={{

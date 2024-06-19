@@ -6,7 +6,7 @@ const MainPage = () => {
     <Center>
       <Stack
         height='100%'
-        width='70%'
+        width='1024px'
         borderRadius='16px'
         aria-label='box'
         gap='16px'
