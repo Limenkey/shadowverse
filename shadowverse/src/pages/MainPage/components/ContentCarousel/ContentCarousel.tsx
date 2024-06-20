@@ -13,13 +13,14 @@ export const ContentCarousel = () => {
           alignItems='center'
           height='452px'
           background={APP_COLORS.cardBG}
-          shadow='md'
+          borderRadius='16px'
         >
           <Image
             src={item.image.url}
             alt={item.image.alt}
             width='40%'
             height='100%'
+            borderLeftRadius='16px'
           />
           <Stack
             justifyContent='space-between'

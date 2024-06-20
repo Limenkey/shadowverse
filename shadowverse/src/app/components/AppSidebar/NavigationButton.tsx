@@ -1,9 +1,10 @@
 import { Button } from '@chakra-ui/react';
 import { Link, useLocation } from 'react-router-dom';
 import { PATHS } from '../../providers/Router/paths.tsx';
+import { APP_COLORS } from '../../../const/styles';
 
 interface NavigationButtonProps {
-  onClose: () => void;
+  onClose?: () => void;
   path: PATHS;
   label: string;
 }
@@ -15,15 +16,16 @@ export const NavigationButton = (props: NavigationButtonProps) => {
 
   const NavigationButtonStyle = {
     _hover: {
-      color: isActive ? 'blue.500' : 'blue.200',
+      color: isActive ? APP_COLORS.textWhite : 'blue.200',
     },
-    borderBottom: isActive ? '1px solid' : undefined,
+    bg: isActive ? '#2b2c31' : 'inherit',
     borderColor: isActive ? 'blue.500' : undefined,
-    borderRadius: 'none',
-    color: isActive ? 'blue.500' : 'white',
+    borderRadius: '8px',
     justifyContent: 'flex-start',
     pl: '0',
+    px: '8px',
     variant: 'text',
+    width: '100%',
   };
 
   return (

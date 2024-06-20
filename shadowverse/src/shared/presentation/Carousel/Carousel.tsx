@@ -54,7 +54,6 @@ const Carousel = <T extends { id: number | string }>(
   return (
     <Box
       position='relative'
-      width='full'
       overflow='hidden'
       ref={carouselRef}
       borderRadius='16px'
@@ -74,28 +73,34 @@ const Carousel = <T extends { id: number | string }>(
         ))}
       </Box>
       <IconButton
-        icon={<ChevronLeftIcon />}
+        icon={<ChevronLeftIcon width='24px' height='24px' />}
         position='absolute'
         left='4px'
         top='50%'
         transform='translateY(-50%)'
         onClick={previousSlide}
-        zIndex='10'
+        zIndex='1'
         bg='whiteAlpha.500'
         _hover={{ bg: 'whiteAlpha.800' }}
         aria-label='previous-slide'
+        width='40px'
+        height='40px'
+        borderRadius='8px'
       />
       <IconButton
-        icon={<ChevronRightIcon />}
+        icon={<ChevronRightIcon width='24px' height='24px' />}
         position='absolute'
         right='4px'
         top='50%'
         transform='translateY(-50%)'
         onClick={nextSlide}
-        zIndex='10'
+        zIndex='1'
         bg='whiteAlpha.500'
         _hover={{ bg: 'whiteAlpha.800' }}
         aria-label='next-slide'
+        width='40px'
+        height='40px'
+        borderRadius='8px'
       />
       <Flex justify='center' position='absolute' bottom='4px' width='100%'>
         <Button

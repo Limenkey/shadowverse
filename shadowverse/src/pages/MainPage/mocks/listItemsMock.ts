@@ -13,6 +13,8 @@ export const listItemsMock: NewsfeedItem[] = [
       alt: 'picture',
       url: mockImg,
     },
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 1',
     title: 'Text article',
     type: 'article',
   },
@@ -25,8 +27,10 @@ export const listItemsMock: NewsfeedItem[] = [
       alt: 'picture',
       url: mockImg2,
     },
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 2',
     title: 'Text article',
-    type: 'article',
+    type: 'image',
   },
   {
     createdAt: new Date().toISOString(),
@@ -37,7 +41,37 @@ export const listItemsMock: NewsfeedItem[] = [
       alt: 'picture',
       url: mockImg3,
     },
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 3',
     title: 'Text article',
-    type: 'article',
+    type: 'story',
+  },
+  {
+    createdAt: new Date().toISOString(),
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod',
+    id: '4',
+    image: {
+      alt: 'picture',
+      url: mockImg3,
+    },
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 3',
+    title: 'Text article',
+    type: 'story',
+  },
+  {
+    createdAt: new Date().toISOString(),
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod',
+    id: '5',
+    image: {
+      alt: 'picture',
+      url: mockImg2,
+    },
+    shortDescription:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 2',
+    title: 'Text article',
+    type: 'image',
   },
 ];
