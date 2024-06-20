@@ -1,5 +1,5 @@
 import { Flex, Heading, Stack } from '@chakra-ui/react';
-import paths from '../../providers/Router/paths.tsx';
+import { navigationPaths } from '../../providers/Router/paths.tsx';
 import { NavigationButton } from './NavigationButton.tsx';
 
 export const AppSidebar = () => {
@@ -24,7 +24,7 @@ export const AppSidebar = () => {
         <Heading>IMC</Heading>
       </Flex>
       <Stack padding='24px'>
-        {paths.map(({ label, path }) => (
+        {navigationPaths.map(({ label, path }) => (
           <NavigationButton key={path} path={path} label={label} />
         ))}
       </Stack>

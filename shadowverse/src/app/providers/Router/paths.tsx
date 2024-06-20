@@ -6,10 +6,11 @@ export enum PATHS {
   CONTACT = '/contact',
   GALLERY = '/gallery',
   LIBRARY = '/library',
-  ROOT = '/',
+  LIBRARY_ITEM = '/library/:id',
+  ROOT = '/home',
 }
 
-const paths = [
+export const navigationPaths = [
   {
     element: <MainPage />,
     label: "What's new",
@@ -37,4 +38,11 @@ const paths = [
   },
 ];
 
-export default paths;
+export const paths = [
+  ...navigationPaths,
+  {
+    element: <Box color='white'>Library</Box>,
+    label: 'Library',
+    path: PATHS.LIBRARY_ITEM,
+  },
+];

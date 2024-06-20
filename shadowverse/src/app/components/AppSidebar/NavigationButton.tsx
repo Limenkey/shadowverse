@@ -12,7 +12,7 @@ interface NavigationButtonProps {
 export const NavigationButton = (props: NavigationButtonProps) => {
   const { label, onClose, path } = props;
   const { pathname } = useLocation();
-  const isActive = path === pathname;
+  const isActive = pathname.includes(path);
 
   const NavigationButtonStyle = {
     _hover: {
