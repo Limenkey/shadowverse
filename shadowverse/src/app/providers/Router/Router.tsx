@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
-import { Box, Center, Circle, Heading, Stack } from '@chakra-ui/react';
+import { Box, Center, Heading, Stack } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import paths from './paths.tsx';
-import { Navigation } from '../../components/Navigation/Navigation.tsx';
+import { Navigation } from '../../components/Navigation';
 
 const Router = () => {
   return (

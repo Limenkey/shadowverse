@@ -58,6 +58,7 @@ const Carousel = <T extends { id: number | string }>(
       overflow='hidden'
       ref={carouselRef}
       borderRadius='16px'
+      paddingBottom='24px'
     >
       <Box
         display='flex'
@@ -96,7 +97,7 @@ const Carousel = <T extends { id: number | string }>(
         _hover={{ bg: 'whiteAlpha.800' }}
         aria-label='next-slide'
       />
-      <Flex justify='center' position='absolute' bottom='10px' width='100%'>
+      <Flex justify='center' position='absolute' bottom='4px' width='100%'>
         <Button
           onClick={() => {
             setIsPaused(!isPaused);
