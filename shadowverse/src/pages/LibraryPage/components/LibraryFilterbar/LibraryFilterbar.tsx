@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Input, Stack } from '@chakra-ui/react';
+import { Box, Button, Flex, Stack } from '@chakra-ui/react';
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons';
 import { APP_COLORS } from '../../../../const/styles';
 import { SingleTagSelector } from '../../../../shared/interaction/SingleTagSelector';
@@ -6,6 +6,7 @@ import { BasicDropdown } from '../../../../shared/interaction/Dropdown';
 import type { ISelectItem } from '../../../../types/generics';
 import { useLibraryFilterbarState } from '../../state/useLibraryFilterbarState.ts';
 import { TItemType, TSortingType } from '../../types/libraryFilterbarTypes.ts';
+import { SearchInput } from '../../../../shared/interaction/SearchInput';
 
 const sortingOptions: ISelectItem<TSortingType>[] = [
   {
@@ -38,18 +39,11 @@ export const LibraryFilterbar = () => {
     useLibraryFilterbarState();
   return (
     <Box>
-      <Stack px='128px' gap='16px'>
-        <Input
+      <Stack gap='16px'>
+        <SearchInput
           placeholder='What are you looking for?'
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          width='100%'
-          bg={APP_COLORS.cardBG}
-          borderColor='transparent'
-          color={APP_COLORS.textWhite}
-          _placeholder={{
-            color: APP_COLORS.textGray,
-          }}
+          onChange={setSearch}
         />
         <Flex justifyContent='space-between' alignItems='center'>
           <SingleTagSelector
