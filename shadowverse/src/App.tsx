@@ -26,7 +26,6 @@ const App = () => {
                   alignItems='center'
                   flexGrow={1}
                 >
-                  <AppHeader />
                   <Router />
                 </Stack>
               </Flex>

@@ -9,9 +9,6 @@ export const ContentList = (props: ContentListProps) => {
   const { items } = props;
   return (
     <Stack>
-      <Heading size='lg' textAlign='center'>
-        What's new
-      </Heading>
       <Flex
         justifyContent='flex-start'
         alignItems='center'

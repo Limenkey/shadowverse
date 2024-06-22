@@ -18,7 +18,7 @@ export const NavigationButton = (props: NavigationButtonProps) => {
     _hover: {
       color: isActive ? APP_COLORS.textWhite : 'blue.200',
     },
-    bg: isActive ? '#2b2c31' : 'inherit',
+    bg: isActive ? APP_COLORS.activeGray : 'inherit',
     borderColor: isActive ? 'blue.500' : undefined,
     borderRadius: '8px',
     justifyContent: 'flex-start',
