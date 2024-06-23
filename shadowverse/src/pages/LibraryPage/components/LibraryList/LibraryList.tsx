@@ -1,8 +1,15 @@
 import { Button, Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import { useState } from 'react';
 import { listItemsMock } from '../../../MainPage/mocks/listItemsMock.ts';
 import { APP_COLORS } from '../../../../const/styles';
 
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
+import { Reader } from '../../../../shared/presentation/Reader';
+
 export const LibraryList = () => {
+  const [fileUrl, setFileUrl] = useState<string>('');
+
   return (
     <Flex flexWrap='wrap' gap='16px'>
       {listItemsMock.map((item) => (
@@ -37,6 +44,7 @@ export const LibraryList = () => {
                 size='sm'
                 width='100%'
                 _hover={{ bg: 'gray.700' }}
+                onClick={() => setFileUrl(item?.file || '')}
               >
                 Read
               </Button>
@@ -44,6 +52,11 @@ export const LibraryList = () => {
           </Stack>
         </Flex>
       ))}
+      <Reader
+        url={fileUrl || ''}
+        isOpen={!!fileUrl}
+        onClose={() => setFileUrl('')}
+      />
     </Flex>
   );
 };

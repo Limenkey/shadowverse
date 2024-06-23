@@ -1,8 +1,9 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Box, ChakraProvider, Flex, Stack } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
+import { pdfjs } from 'react-pdf';
 import Router from './app/providers/Router/Router.tsx';
-import { AppHeader, AppSidebar } from './app/components';
+import { AppSidebar } from './app/components';
 import { AppTheme } from './const/styles/theme.ts';
 
 const App = () => {

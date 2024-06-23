@@ -9,4 +9,5 @@ export interface NewsfeedItem {
   description: string;
   shortDescription: string;
   createdAt: string;
+  file?: string;
 }

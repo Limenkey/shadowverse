@@ -1,6 +1,7 @@
 import { Flex, Heading, Stack } from '@chakra-ui/react';
 import { navigationPaths } from '../../providers/Router/paths.tsx';
 import { NavigationButton } from './NavigationButton.tsx';
+import { APP_COLORS } from '../../../const/styles';
 
 export const AppSidebar = () => {
   return (
@@ -10,7 +11,7 @@ export const AppSidebar = () => {
       left='0'
       width='256px'
       gap='8px'
-      bg='#1a1b20'
+      bg={APP_COLORS.modalBgGray}
       height='100%'
     >
       <Flex

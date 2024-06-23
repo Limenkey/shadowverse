@@ -16,7 +16,7 @@ export const ContentList = (props: ContentListProps) => {
         flexWrap='wrap'
       >
         {items.map((item) => (
-          <ContentListItem item={item} />
+          <ContentListItem key={item.id} item={item} />
         ))}
       </Flex>
     </Stack>

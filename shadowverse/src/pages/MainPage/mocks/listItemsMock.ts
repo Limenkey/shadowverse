@@ -1,6 +1,7 @@
 import mockImg from '../../../assets/images/mockImg.jpg';
 import mockImg2 from '../../../assets/images/mockImg2.jpg';
 import mockImg3 from '../../../assets/images/mockImg3.png';
+import mockPdf from '../../../assets/pdf/Copy of The Wind that Raises Sand.pdf';
 import { NewsfeedItem } from '../../../types';
 
 export const listItemsMock: NewsfeedItem[] = [
@@ -36,6 +37,7 @@ export const listItemsMock: NewsfeedItem[] = [
     createdAt: new Date().toISOString(),
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod',
+    file: mockPdf,
     id: '3',
     image: {
       alt: 'picture',

@@ -23,7 +23,9 @@ interface BasicDropdownProps<TId> {
   placement?: PlacementWithLogical;
 }
 
-export const BasicDropdown = <TId,>(props: BasicDropdownProps<TId>) => {
+export const BasicDropdown = <TId extends string>(
+  props: BasicDropdownProps<TId>,
+) => {
   const { bodyWidth, items, onChange, placement, trigger, value } = props;
 
   const [open, setOpen] = useState(false);
@@ -41,7 +43,7 @@ export const BasicDropdown = <TId,>(props: BasicDropdownProps<TId>) => {
       <PopoverTrigger>{trigger}</PopoverTrigger>
       <Portal>
         <PopoverContent
-          bg={APP_COLORS.cardBG}
+          bg={APP_COLORS.modalBgGray}
           border='none'
           py='8px'
           width={bodyWidth}
@@ -50,6 +52,7 @@ export const BasicDropdown = <TId,>(props: BasicDropdownProps<TId>) => {
             <Stack>
               {items.map((el) => (
                 <SelectableButton
+                  key={el.id}
                   label={el.label}
                   isActive={el.id === value}
                   onClick={() => {
