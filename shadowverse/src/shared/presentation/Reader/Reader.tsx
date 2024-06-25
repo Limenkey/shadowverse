@@ -1,12 +1,16 @@
 import { Document, Page } from 'react-pdf';
 import {
   Box,
+  Button,
+  Flex,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
+  ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Text,
 } from '@chakra-ui/react';
 import React, { useCallback, useState } from 'react';
 
@@ -14,13 +18,14 @@ import './Reader.css';
 import { APP_COLORS } from '../../../const/styles';
 
 interface ReaderProps {
+  title: string;
   url: string;
   isOpen: boolean;
   onClose: () => void;
 }
 
 export const Reader = (props: ReaderProps) => {
-  const { isOpen, onClose, url } = props;
+  const { isOpen, onClose, title, url } = props;
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -76,19 +81,11 @@ export const Reader = (props: ReaderProps) => {
   };
 
   // Iphone Scale - 0.55 size 100%
-  // Ipad
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size='xl'>
       <ModalOverlay />
-      <ModalContent
-        minWidth='80%'
-        minHeight='100%%'
-        maxWidth='80%'
-        maxHeight='100%'
-        margin='auto'
-        className='ModalContainer'
-      >
+      <ModalContent width='auto' margin='auto' className='ModalContainer'>
         <ModalHeader
           position='relative'
           zIndex={1}
@@ -96,12 +93,10 @@ export const Reader = (props: ReaderProps) => {
           textAlign='center'
           borderBottom='1px solid'
           borderColor='gray.300'
-          marginBottom='-32px'
+          width='100%'
+          py='8px'
         >
-          Reader
-          <Box color='gray.500' textAlign='center'>
-            Page {pageNumber} of {numPages}
-          </Box>
+          {title}
         </ModalHeader>
         <ModalCloseButton
           sx={{
@@ -110,6 +105,7 @@ export const Reader = (props: ReaderProps) => {
             },
           }}
           onClick={onClose}
+          zIndex='2'
         />
         <ModalBody
           display='flex'
@@ -119,20 +115,50 @@ export const Reader = (props: ReaderProps) => {
           onClick={handlePageClick}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          p='0'
+          pb='16px'
+          boxSizing='border-box'
+          flexGrow={1}
+          bg='white'
+          width='100%'
+          height='100%'
+          overflow='hidden'
         >
-          <Box>
-            <Box className='PdfContainer'>
-              <Document file={url} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page
-                  className='Page'
-                  pageNumber={pageNumber}
-                  pageIndex={pageNumber}
-                  scale={1}
-                />
-              </Document>
-            </Box>
+          <Box className='PdfContainer'>
+            <Document file={url} onLoadSuccess={onDocumentLoadSuccess}>
+              <Page
+                className='Page'
+                pageNumber={pageNumber}
+                pageIndex={pageNumber}
+                scale={1}
+              />
+            </Document>
           </Box>
         </ModalBody>
+        <ModalFooter
+          pt='0'
+          borderTop='1px solid'
+          borderColor='gray.300'
+          position='relative'
+          zIndex='2'
+          width='100%'
+        >
+          <Flex className='page-controls'>
+            <Button size='sm' onClick={goToPrevPage} disabled={pageNumber <= 1}>
+              Previous
+            </Button>
+            <Text lineHeight='32px' color='gray.500' textAlign='center'>
+              Page {pageNumber} of {numPages}
+            </Text>
+            <Button
+              size='sm'
+              onClick={goToNextPage}
+              disabled={pageNumber >= numPages!}
+            >
+              Next
+            </Button>
+          </Flex>
+        </ModalFooter>
       </ModalContent>
     </Modal>
   );

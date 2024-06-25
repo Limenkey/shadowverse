@@ -26,7 +26,6 @@ export const AppTheme = extendTheme({
         },
         '&::-webkit-scrollbar-track': {
           backgroundColor: APP_COLORS.mainBgGray,
-          margin: '8px',
         },
         color: APP_COLORS.textWhite,
       },

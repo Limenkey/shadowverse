@@ -8,10 +8,13 @@ import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { Reader } from '../../../../shared/presentation/Reader';
 
 export const LibraryList = () => {
-  const [fileUrl, setFileUrl] = useState<string>('');
+  const [file, setFile] = useState<{
+    url: string;
+    title: string;
+  } | null>(null);
 
   return (
-    <Flex flexWrap='wrap' gap='16px'>
+    <Flex flexWrap='wrap' gap='16px' paddingBottom='16px'>
       {listItemsMock.map((item) => (
         <Flex
           key={item.id}
@@ -44,7 +47,12 @@ export const LibraryList = () => {
                 size='sm'
                 width='100%'
                 _hover={{ bg: 'gray.700' }}
-                onClick={() => setFileUrl(item?.file || '')}
+                onClick={() =>
+                  setFile({
+                    title: item.title,
+                    url: item.file || '',
+                  })
+                }
               >
                 Read
               </Button>
@@ -52,11 +60,14 @@ export const LibraryList = () => {
           </Stack>
         </Flex>
       ))}
-      <Reader
-        url={fileUrl || ''}
-        isOpen={!!fileUrl}
-        onClose={() => setFileUrl('')}
-      />
+      {file && (
+        <Reader
+          url={file.url}
+          title={file.title}
+          isOpen
+          onClose={() => setFile(null)}
+        />
+      )}
     </Flex>
   );
 };
