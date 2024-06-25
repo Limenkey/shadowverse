@@ -23,7 +23,7 @@ const App = () => {
                 <AppSidebar />
                 <Stack
                   gap='8px'
-                  p='0 24px 0 280px'
+                  p='76px 24px 0px 280px'
                   alignItems='center'
                   flexGrow={1}
                 >

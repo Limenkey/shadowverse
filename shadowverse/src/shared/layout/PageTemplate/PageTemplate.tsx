@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react';
-import { Center, Flex, Heading, Stack } from '@chakra-ui/react';
+import { Flex, Heading, Stack } from '@chakra-ui/react';
+import { APP_COLORS } from '../../../const/styles';
 
 interface PageTemplateProps {
   title: string;
@@ -13,17 +14,23 @@ export const PageTemplate = (props: PropsWithChildren<PageTemplateProps>) => {
         borderRadius='16px'
         aria-label='box'
         gap='16px'
-        pb='16px'
         minWidth='100%'
         maxWidth='100%'
         flexGrow={1}
+        overflow='auto'
+        height='100%'
+        position='relative'
       >
         <Flex
+          position='fixed'
+          zIndex='1'
+          bg={APP_COLORS.mainBgGray}
           height='60px'
           justifyContent='center'
           alignItems='center'
-          width='100%'
-          minWidth='100%'
+          width='calc(100% - 280px)'
+          top='0'
+          left='280px'
         >
           <Heading size='lg' textAlign='center'>
             {title}

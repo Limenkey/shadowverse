@@ -13,6 +13,7 @@ export const AppSidebar = () => {
       gap='8px'
       bg={APP_COLORS.modalBgGray}
       height='100%'
+      zIndex='2'
     >
       <Flex
         borderBottomWidth='1px'
