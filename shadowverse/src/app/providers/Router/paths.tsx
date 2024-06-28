@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { MainPage } from '../../../pages/MainPage';
 import { LibraryPage } from '../../../pages/LibraryPage';
+import { GalleryPage } from '../../../pages/GalleryPage';
 
 export enum PATHS {
   ABOUT = '/about',
@@ -23,7 +24,7 @@ export const navigationPaths = [
     path: PATHS.LIBRARY,
   },
   {
-    element: <Box color='white'>Gallery</Box>,
+    element: <GalleryPage />,
     label: 'Gallery',
     path: PATHS.GALLERY,
   },

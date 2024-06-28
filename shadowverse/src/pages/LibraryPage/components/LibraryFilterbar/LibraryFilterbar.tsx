@@ -5,19 +5,9 @@ import { SingleTagSelector } from '../../../../shared/interaction/SingleTagSelec
 import { BasicDropdown } from '../../../../shared/interaction/Dropdown';
 import type { ISelectItem } from '../../../../types/generics';
 import { useLibraryFilterbarState } from '../../state/useLibraryFilterbarState.ts';
-import { TItemType, TSortingType } from '../../types/libraryFilterbarTypes.ts';
+import type { TItemType } from '../../types/libraryFilterbarTypes.ts';
 import { SearchInput } from '../../../../shared/interaction/SearchInput';
-
-const sortingOptions: ISelectItem<TSortingType>[] = [
-  {
-    id: 'desc',
-    label: 'Newer first',
-  },
-  {
-    id: 'asc',
-    label: 'Older first',
-  },
-];
+import { sortingOptions } from '../../../../const/options/sorting.ts';
 
 const filterOptions: ISelectItem<TItemType>[] = [
   {

@@ -5,7 +5,7 @@ import { listItemsMock } from '../../../MainPage/mocks/listItemsMock.ts';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { Reader } from '../../../../shared/presentation/Reader';
-import { LibraryListItem } from './LibraryListItem.tsx';
+import { LibraryListItem } from '../LibraryListItem';
 
 export const LibraryList = () => {
   const [file, setFile] = useState<{

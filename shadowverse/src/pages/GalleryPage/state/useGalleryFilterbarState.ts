@@ -1,24 +1,19 @@
 import { create } from 'zustand';
-import { TItemType } from '../types/libraryFilterbarTypes.ts';
 import { ESorting } from '../../../types/enums/sorting.ts';
 
-interface LibraryState {
+interface GalleryState {
   search: string;
-  itemType: TItemType;
   sorting: ESorting;
 }
 
-interface LibraryAction {
+interface GalleryAction {
   setSearch: (search: string) => void;
   setSorting: (sorting: ESorting) => void;
-  setItemType: (type: TItemType) => void;
 }
-export const useLibraryFilterbarState = create<LibraryState & LibraryAction>(
+export const useGalleryFilterbarState = create<GalleryState & GalleryAction>(
   (set) => {
     return {
-      itemType: 'all',
       search: '',
-      setItemType: (itemType) => set(() => ({ itemType })),
       setSearch: (val) => set(() => ({ search: val })),
       setSorting: (sorting) => set(() => ({ sorting })),
       sorting: ESorting.DESCENDING,
