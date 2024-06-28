@@ -21,6 +21,8 @@ export const SearchInput = (props: SearchInputProps) => {
         width='100%'
         bg={APP_COLORS.cardBG}
         borderColor='transparent'
+        borderTopRadius='4px'
+        borderBottomRadius='4px'
         color={APP_COLORS.textWhite}
         _placeholder={{
           color: APP_COLORS.textGray,

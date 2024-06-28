@@ -1,6 +1,7 @@
-import mockImg from '../../../assets/images/mockImg.jpg';
 import mockImg2 from '../../../assets/images/mockImg2.jpg';
-import mockImg3 from '../../../assets/images/mockImg3.png';
+import testImg1 from '../../../assets/images/test1.jpg';
+import testImg2 from '../../../assets/images/test2.jpg';
+import testImg3 from '../../../assets/images/test3.jpg';
 import mockPdf from '../../../assets/pdf/Copy of The Wind that Raises Sand.pdf';
 import { NewsfeedItem } from '../../../types';
 
@@ -12,7 +13,7 @@ export const listItemsMock: NewsfeedItem[] = [
     id: '1',
     image: {
       alt: 'picture',
-      url: mockImg,
+      url: testImg1,
     },
     shortDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 1',
@@ -26,7 +27,7 @@ export const listItemsMock: NewsfeedItem[] = [
     id: '2',
     image: {
       alt: 'picture',
-      url: mockImg2,
+      url: testImg2,
     },
     shortDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 2',
@@ -41,7 +42,7 @@ export const listItemsMock: NewsfeedItem[] = [
     id: '3',
     image: {
       alt: 'picture',
-      url: mockImg3,
+      url: testImg3,
     },
     shortDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 3',
@@ -55,7 +56,7 @@ export const listItemsMock: NewsfeedItem[] = [
     id: '4',
     image: {
       alt: 'picture',
-      url: mockImg3,
+      url: mockImg2,
     },
     shortDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 3',
@@ -69,7 +70,7 @@ export const listItemsMock: NewsfeedItem[] = [
     id: '5',
     image: {
       alt: 'picture',
-      url: mockImg2,
+      url: testImg2,
     },
     shortDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod, sed do eiusmod. 2',

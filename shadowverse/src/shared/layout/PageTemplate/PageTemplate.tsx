@@ -20,6 +20,7 @@ export const PageTemplate = (props: PropsWithChildren<PageTemplateProps>) => {
         overflow='auto'
         height='100%'
         position='relative'
+        p='4px'
       >
         <Flex
           position='fixed'

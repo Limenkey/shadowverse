@@ -16,6 +16,7 @@
 .ModalContainer {
     position: relative;
     height: calc(90vh); //842px;
+    max-height: 900px;
     min-width: 700px;
     overflow: hidden;
 }

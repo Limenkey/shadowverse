@@ -15,7 +15,7 @@ export const ContentListItem = (props: ContentListItemProps) => {
       </Heading>
       <Stack
         key={item.id}
-        width='330px'
+        width='326px'
         height='256px'
         backgroundImage={`url(${item.image.url})`}
         borderRadius='16px'
