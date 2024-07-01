@@ -1,10 +1,41 @@
-import { Box, Button, Flex, Stack } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Popover,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTrigger,
+  Stack,
+  Tag,
+  TagLabel,
+} from '@chakra-ui/react';
 import { ArrowDownIcon, ArrowUpIcon } from '@chakra-ui/icons';
 import { SearchInput } from '../../../../shared/interaction/SearchInput';
 import { BasicDropdown } from '../../../../shared/interaction/Dropdown';
 import { APP_COLORS } from '../../../../const/styles';
 import { sortingOptions } from '../../../../const/options/sorting.ts';
 import { useGalleryFilterbarState } from '../../state/useGalleryFilterbarState.ts';
+
+const tags = [
+  {
+    id: 'tall',
+    label: 'Tall',
+  },
+  {
+    id: 'wide',
+    label: 'Wide',
+  },
+  {
+    id: 'landscape',
+    label: 'Landscape',
+  },
+  {
+    id: 'character',
+    label: 'Character',
+  },
+];
 
 export const GalleryFilterbar = () => {
   const { search, setSearch, setSorting, sorting } = useGalleryFilterbarState();
@@ -17,7 +48,34 @@ export const GalleryFilterbar = () => {
         onChange={setSearch}
       />
       <Flex justifyContent='space-between' alignItems='center'>
-        <Box />
+        <Popover size='xl'>
+          <PopoverTrigger>
+            <Button>Trigger</Button>
+          </PopoverTrigger>
+          <PopoverContent
+            bg={APP_COLORS.modalBgGray}
+            border='none'
+            maxWidth='1024px'
+            width='100%'
+          >
+            <PopoverCloseButton />
+            <PopoverHeader border='none'>Tags to search for</PopoverHeader>
+            <PopoverBody>
+              <Flex gap='8px'>
+                {tags.map((tag) => (
+                  <Tag
+                    key={tag.id}
+                    borderRadius='16px'
+                    bg={APP_COLORS.cardBG}
+                    px='16px'
+                  >
+                    <TagLabel>{tag.label}</TagLabel>
+                  </Tag>
+                ))}
+              </Flex>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
         <BasicDropdown
           trigger={
             <Button

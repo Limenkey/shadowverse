@@ -1,7 +1,8 @@
 import { IPicture } from './IPicture.ts';
 
-export interface IGalleryItem {
+export interface IGalleryItem extends IPicture {
   title: string;
+  description: string;
   id: string;
-  image: IPicture;
+  createdAt: string;
 }

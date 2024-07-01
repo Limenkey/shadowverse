@@ -1,30 +1,71 @@
-import { Box, Image, SimpleGrid } from '@chakra-ui/react';
-import { listItemsMock } from '../../../MainPage/mocks/listItemsMock.ts';
+import { SimpleGrid } from '@chakra-ui/react';
+import { useMemo, useState } from 'react';
+import { ImageViewer } from '../../../../shared/presentation/ImageViewer';
+import { GalleryItem } from '../GalleryItem/GalleryItem.tsx';
+import { mockGalleryData } from '../../mock/mockGalleryData.ts';
 
 export const GalleryGrid = () => {
+  const data = mockGalleryData;
+  const [selectedImageId, setSelectedImageId] = useState<string | null>(null);
+  const selectedItem = useMemo(
+    () => data.find((el) => el.id === selectedImageId),
+    [selectedImageId],
+  );
+
+  const openImageViewer = (id: string) => {
+    setSelectedImageId(id);
+  };
+
+  const closeImageViewer = () => {
+    setSelectedImageId(null);
+  };
+
+  const showNextImage = () => {
+    if (selectedImageId) {
+      setSelectedImageId(
+        (prevId) =>
+          data[(data.findIndex((el) => el.id === prevId) + 1) % data.length].id,
+      );
+    }
+  };
+
+  const showPrevImage = () => {
+    if (selectedImageId) {
+      setSelectedImageId(
+        (prevId) =>
+          data[(data.findIndex((el) => el.id === prevId) - 1) % data.length].id,
+      );
+    }
+  };
+
   return (
-    <SimpleGrid
-      columns={{ base: 1, md: 3, sm: 2 }}
-      spacing='8px'
-      gridAutoFlow='dense'
-      autoRows='128px'
-    >
-      {listItemsMock.map((item) => (
-        <Box
-          key={item.id}
-          gridColumn={item.image.aspectRatio === '9:16' ? 'span 1' : 'span 2'}
-          gridRow={item.image.aspectRatio === '9:16' ? 'span 3' : 'span 2'}
-        >
-          <Image
-            src={item.image.url}
-            alt={`Image ${item.id}`}
-            objectFit='fill'
-            width='100%'
-            height='100%'
-            borderRadius='16px'
+    <>
+      <SimpleGrid
+        columns={{ base: 1, md: 3, sm: 2 }}
+        spacing='8px'
+        gridAutoFlow='dense'
+        autoRows='128px'
+      >
+        {data.map((item) => (
+          <GalleryItem
+            key={item.id}
+            item={item}
+            onOpen={() => openImageViewer(item.id)}
           />
-        </Box>
-      ))}
-    </SimpleGrid>
+        ))}
+      </SimpleGrid>
+
+      {selectedItem && (
+        <ImageViewer
+          isOpen={!!selectedImageId}
+          onClose={closeImageViewer}
+          item={selectedItem}
+          onPrev={showPrevImage}
+          onNext={showNextImage}
+          count={data.length}
+          currIdx={data.findIndex((el) => el.id === selectedImageId)}
+        />
+      )}
+    </>
   );
 };
