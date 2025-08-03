@@ -12,6 +12,7 @@ import {
   ChevronRightIcon,
   TriangleUpIcon,
 } from '@chakra-ui/icons';
+import { APP_COLORS } from '../../../const/styles';
 
 interface CarouselProps<T extends { id: number | string }> {
   items: T[];
@@ -80,12 +81,13 @@ const Carousel = <T extends { id: number | string }>(
         transform='translateY(-50%)'
         onClick={previousSlide}
         zIndex='1'
-        bg='whiteAlpha.500'
-        _hover={{ bg: 'whiteAlpha.800' }}
+        bg={`${APP_COLORS.secondaryBlack}80`}
+        _hover={{ bg: `${APP_COLORS.secondaryBlack}CC` }}
         aria-label='previous-slide'
         width='40px'
         height='40px'
         borderRadius='8px'
+        color={APP_COLORS.textWhite}
       />
       <IconButton
         icon={<ChevronRightIcon width='24px' height='24px' />}
@@ -95,12 +97,13 @@ const Carousel = <T extends { id: number | string }>(
         transform='translateY(-50%)'
         onClick={nextSlide}
         zIndex='1'
-        bg='whiteAlpha.500'
-        _hover={{ bg: 'whiteAlpha.800' }}
+        bg={`${APP_COLORS.secondaryBlack}80`}
+        _hover={{ bg: `${APP_COLORS.secondaryBlack}CC` }}
         aria-label='next-slide'
         width='40px'
         height='40px'
         borderRadius='8px'
+        color={APP_COLORS.textWhite}
       />
       <Flex justify='center' position='absolute' bottom='4px' width='100%'>
         <Button
@@ -127,9 +130,9 @@ const Carousel = <T extends { id: number | string }>(
               height='12px'
               width='12px'
               transform='rotate(90deg)'
-              color='gray.100'
+              color={APP_COLORS.textWhite}
               _groupHover={{
-                color: 'blue.500',
+                color: APP_COLORS.accentPink,
               }}
             />
           ) : (
@@ -137,19 +140,19 @@ const Carousel = <T extends { id: number | string }>(
               <Box
                 height='100%'
                 width='4px'
-                bg='gray.100'
+                bg={APP_COLORS.textWhite}
                 borderRadius='4px'
                 _groupHover={{
-                  bg: 'blue.500',
+                  bg: APP_COLORS.accentPink,
                 }}
               />
               <Box
                 height='100%'
                 width='4px'
-                bg='gray.100'
+                bg={APP_COLORS.textWhite}
                 borderRadius='4px'
                 _groupHover={{
-                  bg: 'blue.500',
+                  bg: APP_COLORS.accentPink,
                 }}
               />
             </>
@@ -162,7 +165,11 @@ const Carousel = <T extends { id: number | string }>(
               width='10px'
               height='10px'
               borderRadius='50%'
-              bg={currentIndex === index ? 'blue.500' : 'gray.300'}
+              bg={
+                currentIndex === index
+                  ? APP_COLORS.accentPink
+                  : APP_COLORS.primaryGray
+              }
               mx='5px'
               cursor='pointer'
               onClick={() => setCurrentIndex(index)}

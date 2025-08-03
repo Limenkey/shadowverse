@@ -19,7 +19,7 @@ export const SearchInput = (props: SearchInputProps) => {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         width='100%'
-        bg={APP_COLORS.cardBG}
+        bg={APP_COLORS.secondaryBlack}
         borderColor='transparent'
         borderTopRadius='4px'
         borderBottomRadius='4px'

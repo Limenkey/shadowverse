@@ -11,13 +11,13 @@ export const AppSidebar = () => {
       left='0'
       width='256px'
       gap='8px'
-      bg={APP_COLORS.modalBgGray}
+      bg={APP_COLORS.secondaryBlack}
       height='100%'
       zIndex='2'
     >
       <Flex
         borderBottomWidth='1px'
-        borderColor='blue.500'
+        borderColor={APP_COLORS.accentPink}
         display='flex'
         justifyContent='space-between'
         alignItems='center'

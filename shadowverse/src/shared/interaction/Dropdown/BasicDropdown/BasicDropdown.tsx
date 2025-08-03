@@ -43,7 +43,7 @@ export const BasicDropdown = <TId extends string>(
       <PopoverTrigger>{trigger}</PopoverTrigger>
       <Portal>
         <PopoverContent
-          bg={APP_COLORS.modalBgGray}
+          bg={APP_COLORS.secondaryBlack}
           border='none'
           py='8px'
           width={bodyWidth}

@@ -12,7 +12,7 @@ export const ContentCarousel = () => {
         <Flex
           alignItems='center'
           height='452px'
-          background={APP_COLORS.cardBG}
+          background={APP_COLORS.secondaryBlack}
           borderRadius='16px'
         >
           <Image
@@ -47,11 +47,11 @@ export const ContentCarousel = () => {
             <Flex alignItems='center' justifyContent='center'>
               <Button
                 variant='contained'
-                bg='gray.500'
+                bg={APP_COLORS.accentPink}
                 color={APP_COLORS.textWhite}
                 size='lg'
                 width='100%'
-                _hover={{ bg: 'gray.700' }}
+                _hover={{ bg: APP_COLORS.accentYellow }}
               >
                 Learn more
               </Button>

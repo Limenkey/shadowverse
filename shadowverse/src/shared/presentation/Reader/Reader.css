@@ -10,7 +10,7 @@
 }
 
 .PdfContainer::-webkit-scrollbar-track {
-    background: white;
+    background: #ffffff;
 }
 
 .ModalContainer {

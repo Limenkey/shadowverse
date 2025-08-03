@@ -53,7 +53,7 @@ export const GalleryFilterbar = () => {
             <Button>Trigger</Button>
           </PopoverTrigger>
           <PopoverContent
-            bg={APP_COLORS.modalBgGray}
+            bg={APP_COLORS.secondaryBlack}
             border='none'
             maxWidth='1024px'
             width='100%'
@@ -66,7 +66,7 @@ export const GalleryFilterbar = () => {
                   <Tag
                     key={tag.id}
                     borderRadius='16px'
-                    bg={APP_COLORS.cardBG}
+                    bg={APP_COLORS.secondaryBlack}
                     px='16px'
                   >
                     <TagLabel>{tag.label}</TagLabel>
@@ -83,9 +83,9 @@ export const GalleryFilterbar = () => {
               px='8px'
               variant='ghost'
               _hover={{
-                bg: 'gray.600',
+                bg: APP_COLORS.primaryGray,
               }}
-              bg={APP_COLORS.cardBG}
+              bg={APP_COLORS.secondaryBlack}
             >
               <ArrowUpIcon width='12px' height='16px' mr='-2px' />
               <ArrowDownIcon width='12px' height='16px' />

@@ -89,10 +89,10 @@ export const Reader = (props: ReaderProps) => {
         <ModalHeader
           position='relative'
           zIndex={1}
-          color='black'
+          color={APP_COLORS.secondaryBlack}
           textAlign='center'
           borderBottom='1px solid'
-          borderColor='gray.300'
+          borderColor={APP_COLORS.accentYellow}
           width='100%'
           py='8px'
         >
@@ -101,7 +101,7 @@ export const Reader = (props: ReaderProps) => {
         <ModalCloseButton
           sx={{
             '& > svg > path': {
-              color: APP_COLORS.modalBgGray,
+              color: APP_COLORS.secondaryBlack,
             },
           }}
           onClick={onClose}
@@ -119,7 +119,7 @@ export const Reader = (props: ReaderProps) => {
           pb='16px'
           boxSizing='border-box'
           flexGrow={1}
-          bg='white'
+          bg={APP_COLORS.textWhite}
           width='100%'
           height='100%'
           overflow='hidden'
@@ -138,7 +138,7 @@ export const Reader = (props: ReaderProps) => {
         <ModalFooter
           pt='0'
           borderTop='1px solid'
-          borderColor='gray.300'
+          borderColor={APP_COLORS.accentYellow}
           position='relative'
           zIndex='2'
           width='100%'
@@ -147,7 +147,7 @@ export const Reader = (props: ReaderProps) => {
             <Button size='sm' onClick={goToPrevPage} disabled={pageNumber <= 1}>
               Previous
             </Button>
-            <Text lineHeight='32px' color='gray.500' textAlign='center'>
+            <Text lineHeight='32px' color={APP_COLORS.primaryGray} textAlign='center'>
               Page {pageNumber} of {numPages}
             </Text>
             <Button

@@ -25,7 +25,7 @@ export const PageTemplate = (props: PropsWithChildren<PageTemplateProps>) => {
         <Flex
           position='fixed'
           zIndex='2'
-          bg={APP_COLORS.mainBgGray}
+          bg={APP_COLORS.primaryGray}
           height='60px'
           justifyContent='center'
           alignItems='center'

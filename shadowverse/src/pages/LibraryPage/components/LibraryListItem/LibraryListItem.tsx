@@ -22,7 +22,7 @@ export const LibraryListItem = (props: LibraryListItemProps) => {
   return (
     <Flex
       key={item.id}
-      bg={APP_COLORS.cardBG}
+      bg={APP_COLORS.secondaryBlack}
       borderRadius='16px'
       width='48%'
       gap='0'
@@ -57,18 +57,18 @@ export const LibraryListItem = (props: LibraryListItemProps) => {
         <Flex justifyContent='center' marginTop='auto' gap='16px'>
           <Button
             variant='contained'
-            bg='gray.500'
+            bg={APP_COLORS.accentPink}
             color={APP_COLORS.textWhite}
             size='sm'
             width='100%'
-            _hover={{ bg: 'gray.700' }}
+            _hover={{ bg: APP_COLORS.accentYellow }}
             onClick={onRead}
           >
             Read
           </Button>
           <IconButton
             bg='none'
-            _hover={{ bg: 'gray.700' }}
+            _hover={{ bg: APP_COLORS.accentYellow }}
             size='sm'
             aria-label={`download-${item.id}`}
             icon={<DownloadIcon />}

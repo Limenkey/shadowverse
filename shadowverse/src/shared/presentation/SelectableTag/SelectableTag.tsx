@@ -16,11 +16,11 @@ export const SelectableTag = (props: TagProps) => {
       key='1'
       borderRadius='full'
       variant='solid'
-      bg={isActive ? APP_COLORS.activeBlue : APP_COLORS.cardBG}
+      bg={isActive ? APP_COLORS.accentPink : APP_COLORS.secondaryBlack}
       color={APP_COLORS.textWhite}
       cursor='pointer'
       _hover={{
-        bg: isActive ? APP_COLORS.activeBlue : 'gray.600',
+        bg: isActive ? APP_COLORS.accentPink : APP_COLORS.primaryGray,
       }}
       onClick={onClick}
     >

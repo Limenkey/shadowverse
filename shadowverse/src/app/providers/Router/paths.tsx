@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { MainPage } from '../../../pages/MainPage';
 import { LibraryPage } from '../../../pages/LibraryPage';
 import { GalleryPage } from '../../../pages/GalleryPage';
+import { APP_COLORS } from '../../../const/styles';
 
 export enum PATHS {
   ABOUT = '/about',
@@ -29,12 +30,12 @@ export const navigationPaths = [
     path: PATHS.GALLERY,
   },
   {
-    element: <Box color='white'>About</Box>,
+    element: <Box color={APP_COLORS.textWhite}>About</Box>,
     label: 'About',
     path: PATHS.ABOUT,
   },
   {
-    element: <Box color='white'>Contact</Box>,
+    element: <Box color={APP_COLORS.textWhite}>Contact</Box>,
     label: 'Contact',
     path: PATHS.CONTACT,
   },
@@ -43,7 +44,7 @@ export const navigationPaths = [
 export const paths = [
   ...navigationPaths,
   {
-    element: <Box color='white'>Library</Box>,
+    element: <Box color={APP_COLORS.textWhite}>Library</Box>,
     label: 'Library',
     path: PATHS.LIBRARY_ITEM,
   },

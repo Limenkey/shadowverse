@@ -31,7 +31,7 @@ export const ContentListItem = (props: ContentListItemProps) => {
           height='100%'
           position='absolute'
           zIndex='1'
-          bg='rgba(0,0,0, 0.5)'
+          bg='rgba(26,26,28,0.5)'
           backdropFilter='blur(6px)'
           justifyContent='center'
           alignItems='center'
@@ -47,10 +47,10 @@ export const ContentListItem = (props: ContentListItemProps) => {
           overflow='hidden'
           textAlign='center'
           padding='8px'
-          backgroundColor='rgba(0, 0, 0, 0.5)'
+          backgroundColor='rgba(26,26,28,0.5)'
           borderBottomRadius='16px'
         >
-          <Text color='white' textOverflow='ellipsis'>
+          <Text color={APP_COLORS.textWhite} textOverflow='ellipsis'>
             {item.shortDescription}
           </Text>
         </Box>

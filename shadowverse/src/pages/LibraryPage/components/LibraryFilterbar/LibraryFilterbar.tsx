@@ -48,9 +48,9 @@ export const LibraryFilterbar = () => {
                 px='8px'
                 variant='ghost'
                 _hover={{
-                  bg: 'gray.600',
+                  bg: APP_COLORS.primaryGray,
                 }}
-                bg={APP_COLORS.cardBG}
+                bg={APP_COLORS.secondaryBlack}
               >
                 <ArrowUpIcon width='12px' height='16px' mr='-2px' />
                 <ArrowDownIcon width='12px' height='16px' />

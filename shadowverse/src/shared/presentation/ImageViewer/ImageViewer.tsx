@@ -31,15 +31,15 @@ export const ImageViewer = (props: ImageViewerProps) => {
   const { alt, description, title, url } = item;
   return (
     <Modal isOpen={isOpen} onClose={onClose} size='full' autoFocus={false}>
-      <ModalOverlay bg='rgba(26, 27, 32, 0.8)' />
+      <ModalOverlay bg={`${APP_COLORS.secondaryBlack}CC`} />
       <ModalContent
         justifyContent='center'
         alignItems='center'
-        bg='rgba(26, 27, 32, 0.8)'
+        bg={`${APP_COLORS.secondaryBlack}CC`}
       >
         <ModalCloseButton
           _hover={{
-            bg: 'gray.600',
+            bg: APP_COLORS.primaryGray,
           }}
         />
         <ModalHeader>
@@ -74,9 +74,9 @@ export const ImageViewer = (props: ImageViewerProps) => {
               aria-label='Previous Image'
               onClick={onPrev}
               mr={2}
-              bg='rgba(26, 27, 32, 0.8)'
+              bg={`${APP_COLORS.secondaryBlack}CC`}
               _hover={{
-                bg: 'gray.600',
+                bg: APP_COLORS.primaryGray,
               }}
             />
             <Image
@@ -92,9 +92,9 @@ export const ImageViewer = (props: ImageViewerProps) => {
               aria-label='Next Image'
               onClick={onNext}
               ml={2}
-              bg='rgba(26, 27, 32, 0.8)'
+              bg={`${APP_COLORS.secondaryBlack}CC`}
               _hover={{
-                bg: 'gray.600',
+                bg: APP_COLORS.primaryGray,
               }}
             />
           </Flex>

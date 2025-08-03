@@ -16,10 +16,13 @@ export const NavigationButton = (props: NavigationButtonProps) => {
 
   const NavigationButtonStyle = {
     _hover: {
-      color: isActive ? APP_COLORS.textWhite : 'blue.200',
+      color: isActive
+        ? APP_COLORS.secondaryBlack
+        : APP_COLORS.accentPink,
     },
-    bg: isActive ? APP_COLORS.activeGray : 'inherit',
-    borderColor: isActive ? 'blue.500' : undefined,
+    bg: isActive ? APP_COLORS.accentPink : 'inherit',
+    color: isActive ? APP_COLORS.secondaryBlack : APP_COLORS.textWhite,
+    borderColor: isActive ? APP_COLORS.accentYellow : undefined,
     borderRadius: '8px',
     justifyContent: 'flex-start',
     pl: '0',

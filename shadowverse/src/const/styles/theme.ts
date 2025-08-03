@@ -8,7 +8,7 @@ export const AppTheme = extendTheme({
         height: '100%',
       },
       'html, body': {
-        bg: APP_COLORS.mainBgGray,
+        bg: APP_COLORS.primaryGray,
         height: '100%',
       },
       'html, body, *': {
@@ -18,14 +18,14 @@ export const AppTheme = extendTheme({
         },
         '&::-webkit-scrollbar-thumb': {
           '&:hover': {
-            backgroundColor: 'gray.700',
+            backgroundColor: APP_COLORS.accentPink,
           },
-          backgroundColor: APP_COLORS.cardBG,
+          backgroundColor: APP_COLORS.secondaryBlack,
           borderRadius: '4px',
           cursor: 'pointer',
         },
         '&::-webkit-scrollbar-track': {
-          backgroundColor: APP_COLORS.mainBgGray,
+          backgroundColor: APP_COLORS.primaryGray,
         },
         color: APP_COLORS.textWhite,
       },
