@@ -1,5 +1,5 @@
 // src/components/Carousel.js
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Box,
   Button,
@@ -16,7 +16,7 @@ import {
 interface CarouselProps<T extends { id: number | string }> {
   items: T[];
   interval: number;
-  renderItem: (item: T, index: number, arr: T[]) => ReactNode;
+  renderItem: (item: T, index: number, arr: T[]) => JSX.Element;
 }
 
 const Carousel = <T extends { id: number | string }>(
